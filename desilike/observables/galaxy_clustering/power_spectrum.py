@@ -351,7 +351,7 @@ class TracerPowerSpectrumMultipolesObservable(BaseCalculator):
         flattheory = self.wmatrix.flatpower
         if self.transform == 'cubic':
             # See eq. 16 of https://arxiv.org/pdf/2302.07484.pdf
-            return (3. * (flattheory / self.flatdata)**(1. / 3.) - 2.) * self.flatdata
+            return (4. - 3. * (flattheory / self.flatdata)**(1. / 3.)) * self.flatdata
         return flattheory
 
     @property
